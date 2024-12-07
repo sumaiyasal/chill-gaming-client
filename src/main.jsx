@@ -14,6 +14,7 @@ import AuthProvider from './components/AuthProvider.jsx';
 import Privateroutes from './components/Privateroutes.jsx';
 import Myreviews from './Myreviews.jsx';
 import Mywatchlist from './Mywatchlist.jsx';
+import Allreviews from './components/Allreviews.jsx';
 
 const router = createBrowserRouter([
   {
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
         ,
       },
       {
-        path: "//myWatchlist",
+        path: "/myWatchlist",
         element: <Privateroutes>
           <Mywatchlist></Mywatchlist>
         </Privateroutes>
@@ -44,6 +45,11 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home/>,
+      },
+      {
+        path: "/allreviews",
+        element: <Allreviews></Allreviews>,
+        loader:()=>fetch('http://localhost:5000/reviews')
       },
       {
         path: "/login",

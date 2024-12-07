@@ -12,7 +12,7 @@ const Navbar = () => {
           marginRight:'8px',
          
         })}  >Home</NavLink></li>
-    <li><NavLink to='/allreview'style={({ isActive }) => ({
+    <li><NavLink to='/allreviews'style={({ isActive }) => ({
           backgroundColor: isActive ? '#ff5733' : '#e2e6ea', 
           color: isActive ? 'white' : '#333', 
           marginRight:'8px',
