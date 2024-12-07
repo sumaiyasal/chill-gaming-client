@@ -10,7 +10,10 @@ import AddReview from './components/AddReview.jsx';
 import Home from './components/Home.jsx';
 import Login from './components/Login.jsx';
 import Signup from './components/Signup.jsx';
-import AuthProvider from './components/Authprovider.jsx';
+import AuthProvider from './components/AuthProvider.jsx';
+import Privateroutes from './components/Privateroutes.jsx';
+import Myreviews from './Myreviews.jsx';
+import Mywatchlist from './Mywatchlist.jsx';
 
 const router = createBrowserRouter([
   {
@@ -19,7 +22,24 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/addReview",
-        element: <AddReview/>,
+        element: <Privateroutes>
+          <AddReview/>
+        </Privateroutes>
+        ,
+      },
+      {
+        path: "/myReviews",
+        element: <Privateroutes>
+          <Myreviews></Myreviews>
+        </Privateroutes>
+        ,
+      },
+      {
+        path: "//myWatchlist",
+        element: <Privateroutes>
+          <Mywatchlist></Mywatchlist>
+        </Privateroutes>
+        ,
       },
       {
         path: "/",
