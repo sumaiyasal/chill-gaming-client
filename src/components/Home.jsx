@@ -91,8 +91,66 @@ const Home = () => {
             )}
             </div>
             </section>
+
+           <section>
+            <h1 className="text-center">Upcoming Games</h1>
+            <div className="grid grid-cols-1 lg:grid-cols-3">
+            <div className="card bg-base-100 w-96 shadow-xl">
+    <figure>
+      <img
+        src='https://cdn.mos.cms.futurecdn.net/JpJvUphK4f5S36NNBkuTPS-200-100.jpg' className="w-[300px] h-[300px] pt-10"
+        alt="Shoes" />
+    </figure>
+    <div className="card-body pl-16">
+      <h2 className="card-title">Doom: The Dark Ages </h2>
+      <h3>The next part of one of the most influential FPS series is yanking Doom guy back to a grim fantasy medieval-like prequel setting in The Dark Ages. With any luck, this will be the third great Doom game in a decade.</h3>
+      <p>Launching in 2025</p>
+     
+    </div>
+            </div> 
+
+            <div className="card bg-base-100 w-96 shadow-xl">
+    <figure>
+      <img
+        src='https://cdn.mos.cms.futurecdn.net/jixRRC9sAjfg9NqDbVyqmT-200-100.jpg' className="w-[300px] h-[300px] pt-10"
+        alt="Shoes" />
+    </figure>
+    <div className="card-body pl-16">
+      <h2 className="card-title">Assassin's Creed Shadows </h2>
+      <h3>Assassin's Creed is finally headed to Japan and will continue the series' journey back to its roots. Unlike the open world action Creed games of the past several years, Shadows is following after Mirage by prioritizing stealth again.</h3>
+      <p>Launching in Feb 14,2025</p>
+     
+    </div>
+            </div> 
+
+            <div className="card bg-base-100 w-96 shadow-xl">
+    <figure>
+      <img
+        src='https://cdn.mos.cms.futurecdn.net/e3Lxiobjo2njecKMA2xGyY-200-100.jpg' className="w-[300px] h-[300px] pt-10"
+        alt="Shoes" />
+    </figure>
+    <div className="card-body pl-16">
+      <h2 className="card-title">Monster Hunter Wilds </h2>
+      <h3>Wilds looks like it may be the cherry on top of a several year run of great Monster Hunter games. It looks like the evolution from Monster Hunter World that we were hoping for with a more responsive, simulated open world of monsters to hunt.</h3>
+      <p>Launching in Feb 14,2025</p>
+     
+    </div>
+            </div> 
+
+            </div>
+           </section>
+             
             <section>
-              
+            <div className=" border-2 md:mx-48 flex flex-col items-center justify-center my-40 py-20 space-y-10 rounded-xl bg-">
+    <h1 className='text-4xl font-bold text-black '>Subscribe to our newsletter!!</h1>
+   <div className="flex items-center gap-4">
+   <input
+  type="email"
+  placeholder="Your Email Address"
+  className="input input-bordered  w-full " />
+    <button className="btn bg-blue-300">Subscribe</button>
+   </div>
+</div>
             </section>
         </div>
        </div>
