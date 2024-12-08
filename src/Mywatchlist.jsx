@@ -5,7 +5,7 @@ import { AuthContext } from "./components/AuthProvider";
 const Mywatchlist = () => {
     const [watchlists,setWatchlists]=useState([]);
     const{user}=useContext(AuthContext);
-    fetch(`http://localhost:5000/user-watchlist/${user?.email}`)
+    fetch(`https://chill-gaming-server-as84uipqx-sumaiya-s-projects-efb56ee6.vercel.app/user-watchlist/${user?.email}`)
     .then(res=>res.json())
     .then(data=>setWatchlists(data))
     // console.log(watchlists);
