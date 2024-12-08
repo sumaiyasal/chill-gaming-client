@@ -8,10 +8,10 @@ const REview = ({review}) => {
            <div className="card bg-base-100 w-96 shadow-xl">
   <figure>
     <img
-      src={gameimage}
+      src={gameimage} className="w-[300px] h-[300px] pt-10"
       alt="Shoes" />
   </figure>
-  <div className="card-body">
+  <div className="card-body pl-16">
     <h2 className="card-title">{gamename}</h2>
     <p className="text-xl">{rating} <div className="rating">
   <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />

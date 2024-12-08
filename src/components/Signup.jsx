@@ -3,7 +3,7 @@ import { AuthContext } from "./AuthProvider";
 import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 const Signup = () => {
-  const { createUser, setUser, updateUserProfile,loginwithgoogle } = useContext(AuthContext);
+  const { createUser, setUser,user, updateUserProfile,loginwithgoogle } = useContext(AuthContext);
   const [error, setError] = useState({});  
   const location = useLocation();
   const navigate = useNavigate();
@@ -45,7 +45,7 @@ const Signup = () => {
 }
   const handleSubmit=(e)=>{
         e.preventDefault();
-        
+        console.log(user);
         const form = new FormData(e.target);
     const displayName= form.get("name");
     if (displayName
@@ -73,7 +73,7 @@ const Signup = () => {
     .then((result) => {
       console.log('user created at fb', result.user);
       const createdAt = result?.user?.metadata?.creationTime;
-      setUser(result.user);
+      setUser({displayName,email,photo});
       const newUser = { displayName, email, createdAt }
       console.log(displayName, email, createdAt)
       fetch('http://localhost:5000/users', {

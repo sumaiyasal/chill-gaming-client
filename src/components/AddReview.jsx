@@ -1,9 +1,13 @@
 import { useContext } from "react";
 import { AuthContext } from "./AuthProvider";
+import { useLocation, useNavigate } from "react-router-dom";
 
 
 const AddReview = () => {
     const {user} = useContext(AuthContext);
+    console.log(user);
+    const navigate = useNavigate();
+    const location = useLocation();
     const handleformsubmit=(e)=>{
         e.preventDefault();
         const gameimage=e.target.photo.value;
@@ -32,6 +36,7 @@ const AddReview = () => {
                   
                     e.target.reset();
                 }
+                navigate(location?.state ? location.stats : "/myReviews");
             })
 
     }

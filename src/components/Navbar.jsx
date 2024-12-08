@@ -28,7 +28,7 @@ const Navbar = () => {
           color: isActive ? 'white' : '#333', 
           marginRight:'8px',
         })}>My Reviews</NavLink></li>
-    <li><NavLink to='/'style={({ isActive }) => ({
+    <li><NavLink to='/myWatchlist'style={({ isActive }) => ({
           backgroundColor: isActive ? '#ff5733' : '#e2e6ea', 
           color: isActive ? 'white' : '#333', 
           marginRight:'8px',
