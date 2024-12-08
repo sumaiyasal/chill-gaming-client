@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 
 
 const REview = ({review}) => {
-    const {gameimage,gamename,rating,publishingyear}=review;
+    const {gameimage,gamename,rating,publishingyear,_id}=review;
     return (
         <div>
            <div className="card bg-base-100 w-96 shadow-xl">
@@ -25,7 +26,8 @@ const REview = ({review}) => {
 </div></p>
     <p>Publish in {publishingyear}</p>
     <div className="card-actions justify-end">
-      <button className="btn btn-primary">Explore Details</button>
+        <Link to={`/allreviews/${_id}`}><button className="btn btn-primary">Explore Details</button></Link>
+      
     </div>
   </div>
 </div> 

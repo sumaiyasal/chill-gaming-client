@@ -15,6 +15,8 @@ import Privateroutes from './components/Privateroutes.jsx';
 import Myreviews from './Myreviews.jsx';
 import Mywatchlist from './Mywatchlist.jsx';
 import Allreviews from './components/Allreviews.jsx';
+import Sreview from './Sreview';
+import Updatereview from './Updatereview.jsx';
 
 const router = createBrowserRouter([
   {
@@ -32,8 +34,9 @@ const router = createBrowserRouter([
         path: "/myReviews",
         element: <Privateroutes>
           <Myreviews></Myreviews>
-        </Privateroutes>
-        ,
+        </Privateroutes>,
+        
+        
       },
       {
         path: "/myWatchlist",
@@ -49,7 +52,17 @@ const router = createBrowserRouter([
       {
         path: "/allreviews",
         element: <Allreviews></Allreviews>,
-        loader:()=>fetch('http://localhost:5000/reviews')
+        loader:()=>fetch(`http://localhost:5000/reviews`)
+      },
+      {
+        path: "/allreviews/:id",
+        element: <Sreview></Sreview>,
+        loader:({params})=>fetch(`http://localhost:5000/reviews/${params.id}`)
+      },
+      {
+        path: "/updateReview/:id",
+        element:<Updatereview></Updatereview> ,
+        // loader:({params})=>fetch(`http://localhost:5000/reviews/${params.id}`)
       },
       {
         path: "/login",

@@ -17,7 +17,7 @@ const AddReview = () => {
         
          const newreview={gameimage,gamename,review,rating,publishingyear,genres,email,displayName}
 
-        // send data to the server and database
+        
         fetch('http://localhost:5000/reviews', {
             method: 'POST',
             headers: {
