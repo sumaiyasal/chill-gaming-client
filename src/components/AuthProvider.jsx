@@ -9,6 +9,27 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [email, setEmail] = useState('');
+ 
+
+    const [isDarkMode, setIsDarkMode] = useState(false);
+    useEffect(() => {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "dark") {
+          setIsDarkMode(true);
+        }
+      }, []);
+      const toggleTheme = () => {
+        setIsDarkMode((prev) => !prev);
+      };
+      useEffect(() => {
+        if (isDarkMode) {
+          document.body.classList.add("dark");
+          localStorage.setItem("theme", "dark"); // Persist in localStorage
+        } else {
+          document.body.classList.remove("dark");
+          localStorage.setItem("theme", "light");
+        }
+      }, [isDarkMode]);
 
 
     const createUser = (email, password) => {
@@ -39,7 +60,7 @@ const loginwithgoogle = () => {
         
         
       }; 
-   
+      const [isChecked, setIsChecked] = useState(false);
       useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
           setUser(currentUser);
@@ -55,12 +76,13 @@ const loginwithgoogle = () => {
         createUser,
         signInUser,
         loginwithgoogle,
+        isChecked, setIsChecked,
          email,
         setEmail,
         user,
         setUser,
         signout,
-        loading
+        isDarkMode, toggleTheme 
 
     }
 

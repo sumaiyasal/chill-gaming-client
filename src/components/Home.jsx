@@ -1,15 +1,18 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "./AuthProvider";
 
 const Home = () => {
   const[highestreview,setHighestreview]=useState([]);
   fetch('http://localhost:5000/highestreviews')
   .then(res=>res.json())
   .then(data=>setHighestreview(data))
-
+  const { isDarkMode, toggleTheme } =useContext(AuthContext);
     return (
-        <div className="container mx-auto">
-            <section>
+    
+       <div className="p-2 bg-white dark:bg-gray-800">
+         <div className="container mx-auto ">
+            <section >
             <div className="carousel w-full">
   <div id="slide1" className="carousel-item relative w-full">
     <img
@@ -48,10 +51,13 @@ const Home = () => {
   </div>
 </div>
             </section>
-            <section>
+            {/* <button onClick={toggleTheme} >
+      {isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+    </button> */}
+            <section className="pt-12 bg">
               
               <h1 className="text-center">Highest Rated Game</h1>
-              <div className="grid grid-cols-3 gap-8">
+              <div className="grid lg:grid-cols-3 grid-cols-1 gap-8 pl-4 ">
             {highestreview.map(hreview=>
              <div>
              <div className="card bg-base-100 w-96 shadow-xl">
@@ -85,7 +91,11 @@ const Home = () => {
             )}
             </div>
             </section>
+            <section>
+              
+            </section>
         </div>
+       </div>
 
     );
 };
