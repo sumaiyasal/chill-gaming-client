@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Navigate, useLoaderData, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "./components/AuthProvider";
-
+import Swal from 'sweetalert2';
 
 const Updatereview = () => {
     const {user} = useContext(AuthContext);
@@ -35,12 +35,12 @@ const Updatereview = () => {
                 console.log(data);
                 if (data.modifiedCount) {
                     console.log('successfully updated');
-                    // Swal.fire({
-                    //     title: 'Success!',
-                    //     text: 'Coffee updated successfully',
-                    //     icon: 'success',
-                    //     confirmButtonText: 'Ok'
-                    // });
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Review updated successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Ok'
+                    });
                     e.target.reset();
                     
                 }
@@ -52,8 +52,9 @@ navigate(location?.state ? location.stats : "/myReviews");
 
     }
     return (
-        <div className="container mx-auto ">
-           <h1 className="text-center text-4xl py-16 font-extrabold">Update Review</h1> 
+       <div className="bg-white text-black dark:bg-gray-800 dark:text-white pb-10">
+         <div className="container mx-auto ">
+           <h1 className="text-center text-4xl pt-10 font-extrabold">Update Review</h1> 
            <div className="min-h-screen flex justify-center items-center">
         <div className="card bg-base-100 w-full max-w-lg shrink-0 rounded-none p-10">
          
@@ -190,6 +191,7 @@ navigate(location?.state ? location.stats : "/myReviews");
         </div>
       </div>
         </div>
+       </div>
     );
 };
 

@@ -2,10 +2,10 @@ import { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
 
-
+import { Tooltip } from 'react-tooltip'
 const Navbar = () => {
   const{user,signout,toggleTheme}=useContext(AuthContext);
-  
+  console.log(user);
     
   
  
@@ -65,7 +65,7 @@ const Navbar = () => {
         {links}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">Chill Gaming</a>
+    <a className="btn btn-ghost text-2xl font-bold">Chill Gaming</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -74,6 +74,14 @@ const Navbar = () => {
   </div>
   {user && user?.email ? (
           <div className="navbar-end flex gap-2">
+             <div class="avatar">
+    <div class="w-12">
+      <img src={user.photo?user.photo:`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU3Mk-vKpOPglmhuwPLivuDRJUU5T1QIPCAg&s`} className="w-[50px] h-[50px] picimg" />
+      <Tooltip anchorSelect=".picimg" place="left">
+ {user.displayName}
+</Tooltip>
+    </div>
+  </div>
              <button onClick={signout} className="btn bg-orange-300 rounded-xl ">
             Log-Out
           </button>

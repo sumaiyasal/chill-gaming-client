@@ -1,11 +1,8 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
-import { Typewriter } from 'react-simple-typewriter'
-const Home = () => {
-  
 
- 
+const Home = () => { 
   const[highestreview,setHighestreview]=useState([]);
   fetch('http://localhost:5000/highestreviews')
   .then(res=>res.json())
@@ -13,7 +10,7 @@ const Home = () => {
   const { isDarkMode, toggleTheme } =useContext(AuthContext);
     return (
     
-       <div className="p-2 bg-white dark:bg-gray-800">
+       <div className="p-2 bg-white text-black dark:bg-gray-800 dark:text-white">
          <div className="container mx-auto ">
             <section >
             <div className="carousel w-full rounded-xl">
@@ -60,7 +57,7 @@ const Home = () => {
             <section className="py-32">
               
               <h1 className="text-center text-5xl font-extrabold ">Highest Rated Game</h1>
-              <div className="grid lg:grid-cols-3 pt-20 grid-cols-1 gap-8 pl-4 ">
+              <div className="grid lg:grid-cols-3 pt-20 grid-cols-1 gap-8 pl-4  text-black">
             {highestreview.map(hreview=>
              <div>
              <div className="card bg-base-100 w-96 border-2 rounded-xl">
@@ -97,7 +94,7 @@ const Home = () => {
 
            <section className="pb-20">
             <h1 className=" text-center text-5xl p-20 font-extrabold ">Upcoming Games</h1>
-            <div className="grid grid-cols-1 lg:grid-cols-3">
+            <div className="grid grid-cols-1 lg:grid-cols-3 text-black">
             <div className="card bg-base-100 w-96 shadow-xl">
     <figure>
       <img
@@ -126,7 +123,7 @@ const Home = () => {
     </div>
             </div> 
 
-            <div className="card bg-base-100 w-96 shadow-xl">
+            <div className="card bg-base-100 w-96 shadow-xl ">
     <figure>
       <img
         src='https://cdn.mos.cms.futurecdn.net/e3Lxiobjo2njecKMA2xGyY-200-100.jpg' className="w-[300px] h-[300px] pt-10"
@@ -144,7 +141,7 @@ const Home = () => {
            </section>
              
             <section>
-            <div className=" border-2 md:mx-48 flex flex-col items-center justify-center my-40 py-20 space-y-10 rounded-xl bg-">
+            <div className=" border-2 md:mx-48 flex flex-col items-center justify-center my-40 py-20 space-y-10 rounded-xl bg-white">
     <h1 className='text-4xl font-bold text-black '>Subscribe to our newsletter!!</h1>
    <div className="flex items-center gap-4">
    <input
@@ -155,6 +152,7 @@ const Home = () => {
    </div>
 </div>
             </section>
+          
         </div>
        </div>
 

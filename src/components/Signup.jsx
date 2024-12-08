@@ -20,7 +20,8 @@ const Signup = () => {
       setUser(result.user);
       const displayName=result?.user?.displayName;
       const email=result?.user?.email;
-      const newUser = {displayName,email, createdAt }
+      const photo=result?.user?.photoURL;
+      const newUser = {displayName,email, createdAt,photo }
       console.log(displayName, email, createdAt)
       fetch('http://localhost:5000/users', {
           method: 'POST',
@@ -45,7 +46,7 @@ const Signup = () => {
 }
   const handleSubmit=(e)=>{
         e.preventDefault();
-        console.log(user);
+        // console.log(user);
         const form = new FormData(e.target);
     const displayName= form.get("name");
     if (displayName
@@ -74,7 +75,7 @@ const Signup = () => {
       console.log('user created at fb', result.user);
       const createdAt = result?.user?.metadata?.creationTime;
       setUser({displayName,email,photo});
-      const newUser = { displayName, email, createdAt }
+      const newUser = { displayName, email, createdAt,photo }
       console.log(displayName, email, createdAt)
       fetch('http://localhost:5000/users', {
           method: 'POST',
@@ -99,7 +100,7 @@ const Signup = () => {
     });
   }
     return (
-        <div>
+        <div className="bg-white dark:bg-gray-800">
            <div className="min-h-screen flex justify-center items-center">
       <div className="card bg-base-100 w-full max-w-lg shrink-0 rounded-none p-10">
         <h2 className="text-2xl font-semibold text-center">

@@ -9,7 +9,7 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [email, setEmail] = useState('');
- 
+    const[userinfor,setUserinfor]=useState(null);
 
     const [isDarkMode, setIsDarkMode] = useState(false);
     useEffect(() => {
@@ -82,7 +82,8 @@ const loginwithgoogle = () => {
         user,
         setUser,
         signout,
-        isDarkMode, toggleTheme 
+        isDarkMode, toggleTheme,
+        userinfor,setUserinfor,
 
     }
 

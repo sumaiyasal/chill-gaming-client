@@ -1,6 +1,6 @@
 
 import { Link } from 'react-router-dom';
-
+import Swal from 'sweetalert2';
 const Myreview = ({mr}) => {
     const {_id,gamename,review,genres,rating}=mr;
     const handledelete=(id)=>{
@@ -11,15 +11,13 @@ const Myreview = ({mr}) => {
             .then(data => {
                 // console.log(data);
                 if (data.deletedCount) {
-                    // Swal.fire({
-                    //     title: "Deleted!",
-                    //     text: "Your file has been deleted.",
-                    //     icon: "success"
-                    // });
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "Your file has been deleted.",
+                        icon: "success"
+                    });
 
-                    // update the loaded coffee state
-                    // const remainingCoffees = loadedCoffees.filter(coffee => coffee._id !== _id);
-                    // setLoadedCoffees(remainingCoffees);
+                    
                     console.log("deleted");
 
                 }
@@ -32,8 +30,8 @@ const Myreview = ({mr}) => {
         <td>{review}</td>
         <td>{genres}</td>
         <td>{rating}</td>
-        <td><Link to={`/updateReview/${_id}`}><button type="btn" className="btn">Update</button></Link></td>
-        <td><button type="btn" className="btn" onClick={()=>handledelete(_id)}>Delete</button></td>
+        <td><Link to={`/updateReview/${_id}`}><button type="btn" className="btn bg-lime-300">Update</button></Link></td>
+        <td><button type="btn" className="btn bg-red-300" onClick={()=>handledelete(_id)}>Delete</button></td>
         
 
         

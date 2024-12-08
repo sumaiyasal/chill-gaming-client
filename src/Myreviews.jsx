@@ -11,11 +11,12 @@ const Myreviews = () => {
     .then(data=>setMyreviews(data))
 
     return (
-        <div className="container mx-auto">
+        <div className="bg-white text-black dark:bg-gray-800 dark:text-white">
+            <div className="container mx-auto">
          <h1 className="text-center text-4xl py-16 font-extrabold">My Reviews</h1>
-         <table className="table table-zebra">
+         <table className="table table-zebra text-black">
     {/* head */}
-    <thead>
+    <thead className="text-black" >
       <tr>
        
         <th>Gamename</th>
@@ -30,6 +31,7 @@ const Myreviews = () => {
          }  
          </tbody> 
          </table>
+        </div>
         </div>
     );
 };

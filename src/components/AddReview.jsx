@@ -41,7 +41,8 @@ const AddReview = () => {
 
     }
     return (
-        <div className="container mx-auto ">
+       <div className="bg-white text-black dark:bg-gray-800 dark:text-white pb-10">
+         <div className="container mx-auto ">
            <h1 className="text-center text-3xl pt-16 font-extrabold ">Add Review</h1> 
            <div className="min-h-screen flex justify-center items-center">
         <div className="card bg-base-100 w-full max-w-lg shrink-0 rounded-none p-10">
@@ -172,6 +173,7 @@ const AddReview = () => {
         </div>
       </div>
         </div>
+       </div>
     );
 };
 

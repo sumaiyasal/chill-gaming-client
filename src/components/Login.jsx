@@ -2,8 +2,7 @@ import { useContext,  useState } from "react";
 import { Link} from "react-router-dom";
 import { useNavigate, useLocation } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
-
-
+import Swal from 'sweetalert2';
 
 const Login = () => {
   const {signInUser,setUser,loginwithgoogle,setEmail } = useContext(AuthContext);
@@ -17,6 +16,12 @@ const Login = () => {
     loginwithgoogle()
         .then(result => {
             setUser(result.user);
+            Swal.fire({
+              title: 'Success!',
+              text: 'Successfully Logged In',
+              icon: 'success',
+              confirmButtonText: 'Ok'
+          });
             navigate(location?.state ? location.state : "/");
         })
         .catch((errorr) => {
@@ -46,7 +51,14 @@ const Login = () => {
           })
               .then(res => res.json())
               .then(data => {
-                  console.log('sign in info updated in db', data)
+                  console.log('sign in info updated in db', data);
+                  Swal.fire({
+                    title: 'Success!',
+                    text: 'Successfully Logged In',
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                });
+
               })
           navigate(location?.state ? location.state : "/");
         })
@@ -97,7 +109,9 @@ const Login = () => {
               <button className="btn btn-neutral rounded-xl mb-2">Login</button>
               <button className="btn bg-[#3ea5e0] rounded-xl text-white" onClick={handleGoogleSignIn}>Login with Google</button>
             </div>
+      
           </form>
+         
           <p className="text-center font-semibold">
             Dont't Have An Account ?{" "}
             <Link className="text-red-500" to="/signup">
@@ -105,7 +119,9 @@ const Login = () => {
             </Link>
           </p>
         </div>
+       
       </div>
+      
      </div>
     );
 };
