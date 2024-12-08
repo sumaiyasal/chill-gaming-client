@@ -53,7 +53,7 @@ navigate(location?.state ? location.stats : "/myReviews");
     }
     return (
         <div className="container mx-auto ">
-           <h1 className="text-center">Update Review</h1> 
+           <h1 className="text-center text-4xl py-16 font-extrabold">Update Review</h1> 
            <div className="min-h-screen flex justify-center items-center">
         <div className="card bg-base-100 w-full max-w-lg shrink-0 rounded-none p-10">
          

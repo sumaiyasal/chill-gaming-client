@@ -1,8 +1,11 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
-
+import { Typewriter } from 'react-simple-typewriter'
 const Home = () => {
+  
+
+ 
   const[highestreview,setHighestreview]=useState([]);
   fetch('http://localhost:5000/highestreviews')
   .then(res=>res.json())
@@ -13,7 +16,7 @@ const Home = () => {
        <div className="p-2 bg-white dark:bg-gray-800">
          <div className="container mx-auto ">
             <section >
-            <div className="carousel w-full">
+            <div className="carousel w-full rounded-xl">
   <div id="slide1" className="carousel-item relative w-full">
     <img
       src="https://greencade.com/wp-content/uploads/2024/08/maxresdefault-58.png" className="w-full h-[550px]" />
@@ -54,16 +57,16 @@ const Home = () => {
             {/* <button onClick={toggleTheme} >
       {isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
     </button> */}
-            <section className="pt-12 bg">
+            <section className="py-32">
               
-              <h1 className="text-center">Highest Rated Game</h1>
-              <div className="grid lg:grid-cols-3 grid-cols-1 gap-8 pl-4 ">
+              <h1 className="text-center text-5xl font-extrabold ">Highest Rated Game</h1>
+              <div className="grid lg:grid-cols-3 pt-20 grid-cols-1 gap-8 pl-4 ">
             {highestreview.map(hreview=>
              <div>
-             <div className="card bg-base-100 w-96 shadow-xl">
+             <div className="card bg-base-100 w-96 border-2 rounded-xl">
     <figure>
       <img
-        src={hreview.gameimage} className="w-[300px] h-[300px] pt-10"
+        src={hreview.gameimage} className="w-[300px] h-[300px] pt-10 "
         alt="Shoes" />
     </figure>
     <div className="card-body pl-16">
@@ -92,8 +95,8 @@ const Home = () => {
             </div>
             </section>
 
-           <section>
-            <h1 className="text-center">Upcoming Games</h1>
+           <section className="pb-20">
+            <h1 className=" text-center text-5xl p-20 font-extrabold ">Upcoming Games</h1>
             <div className="grid grid-cols-1 lg:grid-cols-3">
             <div className="card bg-base-100 w-96 shadow-xl">
     <figure>

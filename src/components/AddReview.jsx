@@ -42,7 +42,7 @@ const AddReview = () => {
     }
     return (
         <div className="container mx-auto ">
-           <h1 className="text-center">Add Review</h1> 
+           <h1 className="text-center text-3xl pt-16 font-extrabold ">Add Review</h1> 
            <div className="min-h-screen flex justify-center items-center">
         <div className="card bg-base-100 w-full max-w-lg shrink-0 rounded-none p-10">
          
@@ -164,7 +164,7 @@ const AddReview = () => {
           </div>
 
             <div className="form-control mt-6">
-              <button className="btn btn-neutral rounded-xl mb-2">Submit</button>
+              <button className="btn btn-neutral rounded-xl mb-2">Add Review</button>
               
             </div>
           </form>

@@ -12,7 +12,7 @@ const Myreviews = () => {
 
     return (
         <div className="container mx-auto">
-         <h1 className="text-center">My Reviews:{myreviews.length}</h1>
+         <h1 className="text-center text-4xl py-16 font-extrabold">My Reviews</h1>
          <table className="table table-zebra">
     {/* head */}
     <thead>

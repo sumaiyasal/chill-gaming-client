@@ -5,7 +5,7 @@ const REview = ({review}) => {
     const {gameimage,gamename,rating,publishingyear,_id}=review;
     return (
         <div>
-           <div className="card bg-base-100 w-96 shadow-xl">
+           <div className="card bg-base-100 w-96 border-2 rounded-xl">
   <figure>
     <img
       src={gameimage} className="w-[300px] h-[300px] pt-10"

@@ -1,14 +1,17 @@
 import { useContext } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "./components/AuthProvider";
 
 
 const Sreview = () => {
     const{_id,gameimage,gamename,review,rating,publishingyear,genres,email,displayName}=useLoaderData();
+    const navigate = useNavigate();
+    const location = useLocation();
     const{user}=useContext(AuthContext);
-    const uname=user.displayName;
-    const uemail=user.email;
-    const watchlist={gameimage,gamename,review,rating,publishingyear,genres,uname,uemail};
+    // const uname=displayName;
+    const uemail=user?.email;
+    const watchlist={gameimage,gamename,review,rating,publishingyear,genres,uemail};
+    console.log(watchlist);
     const handlewatch=(wdata)=>{
         fetch('http://localhost:5000/watchlist', {
             method: 'POST',
@@ -22,10 +25,11 @@ const Sreview = () => {
                 if (data.insertedId) {
                     console.log('successfully added');
                 }
+                navigate(location?.state ? location.stats : "/myWatchlist");
             })
     }
     return (
-        <div className="w-[80%] mx-auto">
+        <div className="w-[80%] mx-auto mb-4">
             <div className="hero bg-base-200 min-h-screen">
   <div className="hero-content flex-col lg:flex-row gap-24 justify-between items-center ">
     <div className="border-4">

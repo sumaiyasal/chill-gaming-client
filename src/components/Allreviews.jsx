@@ -6,8 +6,8 @@ const Allreviews = () => {
     return (
 
         <div className="container mx-auto">
-            <h1 className="text-center">All reviews</h1>
-            <div className="grid grid-cols-3 gap-8">
+            <h1 className="text-center text-4xl py-16 font-extrabold">All reviews</h1>
+            <div className="grid grid-cols-3 gap-8 pb-10">
             {reviews.map(review=><REview key={review._id}
             review={review}
             ></REview>)}

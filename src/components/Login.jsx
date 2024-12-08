@@ -58,7 +58,7 @@ const Login = () => {
      <div className="bg-white dark:bg-gray-800">
          <div className="min-h-screen flex justify-center items-center">
         <div className="card bg-base-100 w-full max-w-lg shrink-0 rounded-none p-10">
-          <h2 className="text-2xl font-semibold text-center">
+          <h2 className="text-4xl py-16 font-extrabold text-center">
             Login your account
           </h2>
           <form onSubmit={handleSubmit} className="card-body border-2 p-4 rounded-lg my-4">
