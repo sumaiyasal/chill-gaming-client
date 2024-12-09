@@ -6,7 +6,8 @@ import Myreview from "./Myreview";
 const Myreviews = () => {
     const [myreviews,setMyreviews]=useState([]);
     const{user}=useContext(AuthContext)
-    fetch(`https://chill-gaming-server.vercel.app/user-reviews/${user?.email}`)
+    fetch(`chill-gaming-server-48g4fkiq0-sumaiya-s-projects-efb56ee6.vercel.app
+/user-reviews/${user?.email}`)
     .then(res=>res.json())
     .then(data=>setMyreviews(data))
 
