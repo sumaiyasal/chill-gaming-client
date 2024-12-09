@@ -42,7 +42,7 @@ const Login = () => {
           const lastSignInTime = result?.user?.metadata?.lastSignInTime;
           const loginInfo = { email, lastSignInTime };
 
-          fetch(`chill-gaming-server.vercel.app
+          fetch(`https://chill-gaming-server.vercel.app
 
 /users`, {
               method: 'PATCH',

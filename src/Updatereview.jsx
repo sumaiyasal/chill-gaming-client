@@ -23,7 +23,7 @@ const Updatereview = () => {
         const displayName = e.target.name.value;
         
          const newreview={gameimage,gamename,review,rating,publishingyear,genres,email,displayName}
-         fetch(`chill-gaming-server.vercel.app
+         fetch(`https://chill-gaming-server.vercel.app
 /reviews/${_id}`, {
             method: 'PUT',
             headers: {

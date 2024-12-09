@@ -1,10 +1,12 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
+import { Typewriter } from 'react-simple-typewriter'
+
 
 const Home = () => { 
   const[highestreview,setHighestreview]=useState([]);
-  fetch('chill-gaming-server.vercel.app/highestreviews')
+  fetch('https://chill-gaming-server.vercel.app/highestreviews')
   .then(res=>res.json())
   .then(data=>setHighestreview(data))
   const { isDarkMode, toggleTheme } =useContext(AuthContext);
@@ -93,7 +95,22 @@ const Home = () => {
             </section>
 
            <section className="pb-20">
-            <h1 className=" text-center text-5xl p-20 font-extrabold ">Upcoming Games</h1>
+            <h1 className=" text-center text-5xl p-20 font-extrabold ">Upcoming Games {' '}
+            <span style={{ color: 'red', fontWeight: 'bold' }}>
+          {/* Style will be inherited from the parent element */}
+          <Typewriter
+            words={['2025!!', 'Releases', 'Schedules' ]}
+            loop={false}
+            cursor
+            cursorStyle='_'
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={400}
+            
+          />
+        </span>
+
+            </h1>
             <div className="grid grid-cols-1 lg:grid-cols-3 text-black">
             <div className="card bg-base-100 w-96 shadow-xl">
     <figure>

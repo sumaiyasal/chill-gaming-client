@@ -23,7 +23,7 @@ const Signup = () => {
       const photo=result?.user?.photoURL;
       const newUser = {displayName,email, createdAt,photo }
       console.log(displayName, email, createdAt)
-      fetch('chill-gaming-server.vercel.app/users', {
+      fetch('https://chill-gaming-server.vercel.app/users', {
           method: 'POST',
           headers: {
               'content-type': 'application/json'
@@ -77,7 +77,7 @@ const Signup = () => {
       setUser({displayName,email,photo});
       const newUser = { displayName, email, createdAt,photo }
       console.log(displayName, email, createdAt)
-      fetch('chill-gaming-server.vercel.app/users', {
+      fetch('https://chill-gaming-server.vercel.app/users', {
           method: 'POST',
           headers: {
               'content-type': 'application/json'
