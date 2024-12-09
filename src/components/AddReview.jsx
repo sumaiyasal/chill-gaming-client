@@ -22,8 +22,7 @@ const AddReview = () => {
          const newreview={gameimage,gamename,review,rating,publishingyear,genres,email,displayName}
 
         
-        fetch('chill-gaming-server-48g4fkiq0-sumaiya-s-projects-efb56ee6.vercel.app
-/reviews', {
+        fetch('chill-gaming-server-48g4fkiq0-sumaiya-s-projects-efb56ee6.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
