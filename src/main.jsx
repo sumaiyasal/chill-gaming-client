@@ -17,11 +17,13 @@ import Mywatchlist from './Mywatchlist.jsx';
 import Allreviews from './components/Allreviews.jsx';
 import Sreview from './Sreview';
 import Updatereview from './Updatereview.jsx';
+import Error from './Error.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element:<App></App>,
+    errorElement:<Error></Error>,
     children: [
       {
         path: "/addReview",
@@ -53,12 +55,12 @@ const router = createBrowserRouter([
       {
         path: "/allreviews",
         element: <Allreviews></Allreviews>,
-        loader:()=>fetch(`https://chill-gaming-server-huxylss3m-sumaiya-s-projects-efb56ee6.vercel.app/reviews`)
+        loader:()=>fetch(`https://chill-gaming-server.vercel.app/reviews`)
       },
       {
         path: "/allreviews/:id",
         element: <Sreview></Sreview>,
-        loader:({params})=>fetch(`https://chill-gaming-server-huxylss3m-sumaiya-s-projects-efb56ee6.vercel.app/reviews/${params.id}`)
+        loader:({params})=>fetch(`https://chill-gaming-server.vercel.app/reviews/${params.id}`)
       },
       {
         path: "/updateReview/:id",
@@ -67,7 +69,7 @@ const router = createBrowserRouter([
            <Updatereview></Updatereview>
         </Privateroutes>
         ,
-        loader:({params})=>fetch(`https://chill-gaming-server-huxylss3m-sumaiya-s-projects-efb56ee6.vercel.app/reviews/${params.id}`)
+        loader:({params})=>fetch(`https://chill-gaming-server.vercel.app/reviews/${params.id}`)
       },
       {
         path: "/login",
