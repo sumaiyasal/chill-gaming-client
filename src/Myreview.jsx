@@ -4,8 +4,7 @@ import Swal from 'sweetalert2';
 const Myreview = ({mr}) => {
     const {_id,gamename,review,genres,rating}=mr;
     const handledelete=(id)=>{
-        fetch(`chill-gaming-server.vercel.app
-/reviews/${_id}`, {
+        fetch(`chill-gaming-server.vercel.app/reviews/${_id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
