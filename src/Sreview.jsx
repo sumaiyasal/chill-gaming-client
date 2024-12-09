@@ -13,7 +13,7 @@ const Sreview = () => {
     const watchlist={gameimage,gamename,review,rating,publishingyear,genres,uemail};
     console.log(watchlist);
     const handlewatch=(wdata)=>{
-        fetch('chill-gaming-server-48g4fkiq0-sumaiya-s-projects-efb56ee6.vercel.app/watchlist', {
+        fetch('chill-gaming-server-8s5wdzpk3-sumaiya-s-projects-efb56ee6.vercel.app/watchlist', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

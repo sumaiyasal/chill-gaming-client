@@ -55,13 +55,13 @@ const router = createBrowserRouter([
       {
         path: "/allreviews",
         element: <Allreviews></Allreviews>,
-        loader:()=>fetch(`chill-gaming-server-48g4fkiq0-sumaiya-s-projects-efb56ee6.vercel.app
+        loader:()=>fetch(`chill-gaming-server-8s5wdzpk3-sumaiya-s-projects-efb56ee6.vercel.app
 /reviews`)
       },
       {
         path: "/allreviews/:id",
         element: <Sreview></Sreview>,
-        loader:({params})=>fetch(`chill-gaming-server-48g4fkiq0-sumaiya-s-projects-efb56ee6.vercel.app
+        loader:({params})=>fetch(`chill-gaming-server-8s5wdzpk3-sumaiya-s-projects-efb56ee6.vercel.app
 /reviews/${params.id}`)
       },
       {
@@ -71,7 +71,7 @@ const router = createBrowserRouter([
            <Updatereview></Updatereview>
         </Privateroutes>
         ,
-        loader:({params})=>fetch(`chill-gaming-server-48g4fkiq0-sumaiya-s-projects-efb56ee6.vercel.app
+        loader:({params})=>fetch(`chill-gaming-server-8s5wdzpk3-sumaiya-s-projects-efb56ee6.vercel.app
 /reviews/${params.id}`)
       },
       {
