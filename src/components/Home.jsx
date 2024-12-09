@@ -4,7 +4,7 @@ import { AuthContext } from "./AuthProvider";
 
 const Home = () => { 
   const[highestreview,setHighestreview]=useState([]);
-  fetch('chill-gaming-server-8s5wdzpk3-sumaiya-s-projects-efb56ee6.vercel.app0/highestreviews')
+  fetch('chill-gaming-server.vercel.app/highestreviews')
   .then(res=>res.json())
   .then(data=>setHighestreview(data))
   const { isDarkMode, toggleTheme } =useContext(AuthContext);
