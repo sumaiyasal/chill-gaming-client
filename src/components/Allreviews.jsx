@@ -55,8 +55,8 @@ setSelectedGenre(genre);
     return (
          <div className=" mt-10 bg-white text-black dark:bg-gray-800 dark:text-white">
                 <div className="container mx-auto ">
-            <h1 className="text-center text-4xl py-16 font-extrabold ">All reviews</h1>
-            <div className="sort-dropdown pb-10">
+            <h1 className="text-center text-4xl py-10 font-extrabold ">All reviews</h1>
+            <div className="sort-dropdown pb-4">
         <label>Sort by:</label>
         <select id="sortOptions" value={sortCriteria} onChange={handleSortChange} className="text-black">
           <option value="rating">Rating </option>
@@ -65,7 +65,7 @@ setSelectedGenre(genre);
         </select>
       </div>
 
-      <div className="filter-dropdown pb-10">
+      <div className="filter-dropdown pb-4">
         <label>Filter by:</label>
         <select id="filterOption" value={selectedGenre} onChange={handlefilter} className="text-black">
           <option value="all">All </option>
@@ -77,7 +77,7 @@ setSelectedGenre(genre);
   
         </select>
       </div>
-            <div className="grid lg:grid-cols-4  pt-20 grid-cols-1 gap-6  text-black pl-2 lg:pl-0 mb-4">
+            <div className="grid lg:grid-cols-4  pt-20 pb-10 grid-cols-1 gap-6  text-black pl-5 lg:pl-0 ">
             {criterias.map(review=><REview key={review._id}
             review={review}
             ></REview>)}

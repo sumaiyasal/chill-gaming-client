@@ -73,7 +73,7 @@ const Navbar = () => {
     </ul>
   </div>
   {user && user?.email ? (
-         <div className="navbar-end mr-8  flex  gap-2  text-black dark:text-white">
+         <div className="navbar-end lg:mr-8 mr-0 flex  gap-2  text-black dark:text-white">
   
   <label className="swap swap-rotate">
   {/* this hidden checkbox controls the state */}
