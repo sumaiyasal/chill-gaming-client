@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { AuthContext } from "./AuthProvider";
 import { useLocation, useNavigate } from "react-router-dom";
+import picc from "../assets/Animation - 1747306446802.json"
+import Lottie from "lottie-react";
 
 
 const AddReview = () => {
@@ -41,13 +43,18 @@ const AddReview = () => {
 
     }
     return (
-       <div className="bg-white text-black dark:bg-gray-800 dark:text-white pb-10">
-         <div className="container mx-auto ">
-           <h1 className="text-center text-3xl pt-16 font-extrabold ">Add Review</h1> 
-           <div className="min-h-screen flex justify-center items-center">
-        <div className="card bg-base-100 w-full max-w-lg shrink-0 rounded-none p-10">
+       <div className="mt-10 bg-white text-black dark:bg-gray-800 dark:text-white pb-10">
+         <div className="container mx-auto" >
+           <h1 className="text-center text-3xl pt-10 font-extrabold ">Add Review</h1>
+           <div className="grid lg:grid-cols-2 grid-cols-1 items-center justify-center">
+            <div className=""><Lottie animationData={picc} className="w-full item lg:flex hidden"></Lottie></div>
+             
+            
+           <div className="min-h-screen flex justify-center items-center w-full">
+        <div className="card bg-base-100 w-full max-w-lg mt-10 rounded "
+        >
          
-          <form onSubmit={handleformsubmit} className="card-body border-2 p-4 rounded-lg my-4">
+          <form onSubmit={handleformsubmit} className="card-body border-2 p-4 rounded-lg ">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Game Cover Image</span>
@@ -172,6 +179,8 @@ const AddReview = () => {
      
         </div>
       </div>
+           </div>
+          
         </div>
        </div>
     );

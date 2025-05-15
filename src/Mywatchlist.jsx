@@ -11,7 +11,7 @@ const Mywatchlist = () => {
     .then(data=>setWatchlists(data))
     // console.log(watchlists);
     return (
-       <div className="bg-white text-black dark:bg-gray-800 dark:text-white">
+       <div className="mt-10 bg-white text-black dark:bg-gray-800 dark:text-white">
          <div className="container mx-auto mb-5 min-h-screen">
          <h1 className="text-center text-4xl py-16 font-extrabold">My WatchList</h1>
          <table className="table table-zebra text-black">

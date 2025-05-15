@@ -42,7 +42,7 @@ const Navbar = () => {
     
     return (
         <div className="absolute">
-            <div className="navbar bg-base-100 text-black dark:bg-black dark:text-white fixed top-0 left-0 w-full z-50 ">
+            <div className="navbar bg-base-100 text-black dark:bg-black dark:text-white shadow-orange-100 shadow-md fixed top-0 left-0 w-full z-50 ">
   <div className="navbar-start ">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -100,8 +100,8 @@ const Navbar = () => {
          
         ) : (
           <div className="navbar-end flex gap-2">
-          <NavLink to="/login" className="btn bg-sky-300">Login</NavLink>
-          <NavLink to="/signup" className="btn bg-orange-300">Sign Up</NavLink>
+          <NavLink to="/login" className="btn bg-orange-300">Login</NavLink>
+          
           </div>
         )}
         <label className="swap swap-rotate">
