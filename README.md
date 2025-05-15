@@ -46,19 +46,86 @@ src/
 
 ---
 
-## 🧪 How to Run Locally
+### Steps
 
-### 1. Clone the Repo
-```bash
-git clone https://github.com/programming-hero-web-course2/b10-a10-client-side-sumaiyasal.git
-cd b10-a10-client-side-sumaiyasal
+1. **Clone the repository**:
 
-npm install
-VITE_FIREBASE_API_KEY=your_api_key
-VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
-VITE_FIREBASE_PROJECT_ID=your_project_id
-VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
-VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-VITE_FIREBASE_APP_ID=your_app_id
-npm run dev
+    ```bash
+   git clone https://github.com/yourusername/chill-game.git
+   cd chill-game
+    ```
+
+2. **Install dependencies**:
+
+    ```bash
+    npm install
+    ```
+
+3. **Configure Firebase**:
+
+    - Set up Firebase for your project by visiting [Firebase Console](https://console.firebase.google.com/).
+    - Initialize Firebase Hosting and Firestore (or another service for storing car data).
+    - Add your Firebase credentials and configuration to your project.
+
+4. **Run the project locally**:
+
+    ```bash
+    npm start
+    ```
+
+    - Open your browser to view the app running locally.
+
+---
+
+## 📤 **Deploying to Firebase Hosting**
+
+To deploy the app to Firebase Hosting, follow these steps:
+
+1. **Login to Firebase**:
+
+    ```bash
+    firebase login
+    ```
+
+2. **Deploy your project**:
+
+    ```bash
+    firebase deploy
+    ```
+
+Once deployed, your project will be live and accessible on the web.
+
+---
+
+## 🤝 **Contributing**
+
+We welcome contributions from the community! If you'd like to contribute, follow these steps:
+
+1. **Fork the repository** to your own GitHub account.
+2. **Create a new branch**:
+
+    ```bash
+    git checkout -b feature/your-feature
+    ```
+
+3. **Make your changes** and commit them:
+
+    ```bash
+    git commit -am 'Add new feature'
+    ```
+
+4. **Push your changes** to the repository:
+
+    ```bash
+    git push origin feature/your-feature
+    ```
+
+5. **Open a pull request** to have your changes reviewed and merged.
+
+---
+
+
+
+
+
 
