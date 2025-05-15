@@ -24,6 +24,7 @@ import Overview from './components/Overview.jsx';
 import Profile from './components/Profile.jsx';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Toaster } from 'react-hot-toast';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -118,6 +119,7 @@ createRoot(document.getElementById('root')).render(
       <AuthProvider>
       <RouterProvider router={router}></RouterProvider>
        <ToastContainer position="top-center" />
+       <Toaster position="top-center" />
     </AuthProvider>
     </AuthProvider>,
 )

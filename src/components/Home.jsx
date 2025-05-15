@@ -4,9 +4,13 @@ import { AuthContext } from "./AuthProvider";
 import { Typewriter } from 'react-simple-typewriter'
 import 'animate.css';
 import Marquee from 'react-fast-marquee';
-
+import { toast } from 'react-hot-toast';
 
 const Home = () => { 
+   const handleSubscribe = (e) => {
+    e.preventDefault();
+    toast.success("You're subscribed, gamer! ");
+  };
   const game = {
   title: 'Hollow Knight: Silksong',
   description: 'An epic action-adventure through a vast, haunted kingdom. Silksong expands the original with new mechanics and environments.',
@@ -245,18 +249,35 @@ const testimonials = [
         ))}
       </Marquee>
     </section>
-            <section>
-            <div className=" border-2 md:mx-48 flex flex-col items-center justify-center my-20 py-20 space-y-10 rounded-xl bg-white">
-    <h1 className='text-4xl font-bold text-black '>Subscribe to our newsletter!!</h1>
-   <div className="flex items-center gap-4">
-   <input
-  type="email"
-  placeholder="Your Email Address"
-  className="input input-bordered  w-full " />
-    <button className="btn bg-blue-300">Subscribe</button>
-   </div>
-</div>
-            </section>
+           <section className="relative bg-gradient-to-r from-orange-200 via-orange-400 to-orange-200 py-16 px-6 text-white overflow-hidden shadow-inner rounded-xl my-10">
+      <div className="max-w-2xl mx-auto text-center z-10 relative">
+        <h2 className="text-4xl font-extrabold mb-4">💌 Join Our Gamer Digest</h2>
+        <p className="text-lg text-gray-600 mb-6">
+          Be the first to get new reviews, cheat codes, and event alerts.
+        </p>
+
+        <form
+          onSubmit={handleSubscribe}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
+          <input
+            type="email"
+            required
+            placeholder="Enter your email"
+            className="input input-bordered w-full sm:w-80 text-black"
+          />
+          <button
+            type="submit"
+            className="btn bg-orange-500 text-white hover:bg-orange-600 border-0 shadow-lg"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
+
+      <div className="absolute top-0 left-0 w-32 h-32 bg-orange-200 blur-2xl opacity-30 rounded-full animate-pulse"></div>
+      <div className="absolute bottom-0 right-0 w-40 h-40 bg-orange-400 blur-2xl opacity-20 rounded-full animate-ping"></div>
+    </section>
 
           
         </div>
