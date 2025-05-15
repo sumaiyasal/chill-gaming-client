@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
 import { Typewriter } from 'react-simple-typewriter'
 import 'animate.css';
+import Marquee from 'react-fast-marquee';
+
+
 const Home = () => { 
   const game = {
   title: 'Hollow Knight: Silksong',
@@ -11,6 +14,12 @@ const Home = () => {
   releaseDate: 'Coming July 2025',
   link: 'https://hollowknightsilksong.com/',
 };
+const testimonials = [
+  "🎮 “Best platform to find and rate indie games!” – PixelPal",
+  "🕹️ “Love the UI and the watchlist feature!” – NoobMaster420",
+  "⭐ “Feels like Steam, but cooler!” – GamerChickX",
+  "💡 “Highly recommend to all gamers.” – XPHunter",
+];
   const[highestreview,setHighestreview]=useState([]);
   fetch('https://chill-gaming-server.vercel.app/highestreviews')
   .then(res=>res.json())
@@ -92,7 +101,7 @@ const Home = () => {
               <div className="grid lg:grid-cols-4  pt-20 grid-cols-1 gap-6  text-black pl-2 lg:pl-0 " >
             {highestreview.map(hreview=>
              <div>
-             <div className="card bg-base-100 lg:w-72 w-96 border-2 rounded-xl transition ease-in-out   hover:animate-pulse ">
+             <div className="card  lg:w-72 w-96 border-2 rounded-xl transition ease-in-out   hover:animate-pulse bg-base-200">
     <figure>
       <img
         src={hreview.gameimage} className="lg:w-[250px] lg:h-[250px]  w-[300px] h-[300px] pt-10 "
@@ -206,10 +215,10 @@ const Home = () => {
         ))}
       </div>
     </section>
-  <section className=" mx-auto ">
+  <section className=" mx-auto pb-20">
       <h2 className="text-4xl font-bold mb-6 text-center"> Game of the Week</h2>
 
-      <div className="card lg:card-side bg-white shadow-xl">
+      <div className="card lg:card-side bg-white shadow-xl text-black">
         <figure className="">
           <img src={game.image} alt={game.title} className=" w-[60%] h-[60%] object-cover" />
         </figure>
@@ -223,8 +232,21 @@ const Home = () => {
         </div>
       </div>
     </section>
+      <section className="bg-base-200 py-8 px-4 text-black">
+      <h2 className="text-3xl font-bold text-center mb-6">💬 Gamer Testimonials</h2>
+      <Marquee gradient={false} speed={50} pauseOnHover>
+        {testimonials.map((t, i) => (
+          <div
+            key={i}
+            className="mx-8 bg-base-100 p-4 rounded-lg shadow-md min-w-[250px] text-center"
+          >
+            {t}
+          </div>
+        ))}
+      </Marquee>
+    </section>
             <section>
-            <div className=" border-2 md:mx-48 flex flex-col items-center justify-center my-40 py-20 space-y-10 rounded-xl bg-white">
+            <div className=" border-2 md:mx-48 flex flex-col items-center justify-center my-20 py-20 space-y-10 rounded-xl bg-white">
     <h1 className='text-4xl font-bold text-black '>Subscribe to our newsletter!!</h1>
    <div className="flex items-center gap-4">
    <input
