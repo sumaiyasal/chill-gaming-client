@@ -53,14 +53,15 @@ navigate(location?.state ? location.stats : "/myReviews");
 
     }
     return (
-       <div className="bg-white text-black dark:bg-gray-800 dark:text-white pb-10">
+       <div className="mt-10 bg-white text-black dark:bg-gray-800 dark:text-white pb-10">
          <div className="container mx-auto ">
            <h1 className="text-center text-4xl pt-10 font-extrabold">Update Review</h1> 
            <div className="min-h-screen flex justify-center items-center">
         <div className="card bg-base-100 w-full max-w-lg shrink-0 rounded-none p-10">
          
-          <form onSubmit={handleupdatesubmit} className="card-body border-2 p-4 rounded-lg my-4">
-            <div className="form-control">
+          <form onSubmit={handleupdatesubmit} className="card-body text-black border-2 p-4 rounded-lg my-4
+          ">
+            <div className="form-control  ">
               <label className="label">
                 <span className="label-text">Game Cover Image</span>
               </label>
@@ -69,7 +70,7 @@ navigate(location?.state ? location.stats : "/myReviews");
               name="photo"
              
               placeholder="photo-url"
-              className="input input-bordered"
+              className="input input-bordered text-black"
               defaultValue={gameimage}
               required
             />

@@ -14,9 +14,9 @@ const Myreviews = () => {
         <div className="mt-10 bg-white text-black dark:bg-gray-800 dark:text-white">
             <div className="container mx-auto">
          <h1 className="text-center text-4xl py-16 font-extrabold">My Reviews</h1>
-         <table className="table table-zebra text-black">
+         <table className="table  ">
     {/* head */}
-    <thead className="text-black" >
+    <thead className=" text-black dark: dark:text-white text-lg" >
       <tr>
        
         <th>Gamename</th>

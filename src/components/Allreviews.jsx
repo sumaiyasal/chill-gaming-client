@@ -77,7 +77,7 @@ setSelectedGenre(genre);
   
         </select>
       </div>
-            <div className="grid grid-cols-3 gap-8 pb-10 text-black">
+            <div className="grid lg:grid-cols-4  pt-20 grid-cols-1 gap-6  text-black pl-2 lg:pl-0 mb-4">
             {criterias.map(review=><REview key={review._id}
             review={review}
             ></REview>)}

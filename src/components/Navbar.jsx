@@ -42,8 +42,8 @@ const Navbar = () => {
     
     return (
         <div className="absolute">
-            <div className="navbar bg-base-100 text-black dark:bg-black dark:text-white shadow-orange-100 shadow-md fixed top-0 left-0 w-full z-50 ">
-  <div className="navbar-start ">
+            <div className="navbar bg-base-100 text-black dark:bg-black dark:text-white shadow-orange-100 shadow-md fixed top-0 left-0 w-full z-50  ">
+  <div className="navbar-start px-8 ">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
         <svg
@@ -65,7 +65,7 @@ const Navbar = () => {
         {links}
       </ul>
     </div>
-    <a className="btn btn-ghost text-2xl font-bold">Chill Gamer</a>
+    <span className="text-2xl font-bold text-orange-500">Chill Gamer</span>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
