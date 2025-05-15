@@ -1,6 +1,6 @@
-# 🎮 Chill Game Reviews – A Calm Gaming Community 🌿
+# 🎮 Chill Game  – Game Review Website
 
-Welcome to **Chill Game Reviews**, a full-stack web application where users can explore and contribute reviews for relaxing, indie, and cozy video games. Built as part of Programming Hero Assignment 10, this project emphasizes clean UI/UX, secure user interactions, and modern frontend-backend integration.
+Welcome to **Chill Game**, a full-stack web application where users can explore and contribute reviews for relaxing, indie, and cozy video games.This project emphasizes clean UI/UX, secure user interactions, and modern frontend-backend integration.
 
 ## 🌐 Live Site
 
