@@ -2,6 +2,9 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
 import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import Swal from 'sweetalert2';
+import Lottie from "lottie-react";
+import registerLottieData from"../assets/Animation - 1747041860348.json"
 const Signup = () => {
   const { createUser, setUser,user, updateUserProfile,loginwithgoogle } = useContext(AuthContext);
   const [error, setError] = useState({});  
@@ -101,11 +104,12 @@ const Signup = () => {
   }
     return (
         <div className="bg-white dark:bg-gray-800">
-           <div className="min-h-screen flex justify-center items-center">
-      <div className="card bg-base-100 w-full max-w-lg shrink-0 rounded-none p-10">
-        <h2 className="text-2xl font-semibold text-center">
+          <div className="min-h-full flex flex-1   justify-between  items-center lg:px-20 px-10 py-10">
+           <Lottie animationData={registerLottieData} className="w-2/5 item"></Lottie>
+      <div className="card bg-base-100 w-full max-w-lg shrink-0 rounded-none p-5 mt-10">
+        <h1 className="text-2xl font-semibold text-center">
           Register your account
-        </h2>
+        </h1>
         <form onSubmit={handleSubmit} className="card-body border-2 p-4 rounded-lg my-4">
           <div className="form-control">
             <label className="label">
