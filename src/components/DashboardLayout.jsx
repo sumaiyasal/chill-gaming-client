@@ -6,7 +6,7 @@ import Overview from './Overview';
 
 const DashboardLayout = () => {
   return (
-    <div className="flex min-h-screen">
+    <div className="lg:flex grid grid-cols-1 min-h-screen">
       <Dashboard></Dashboard>
       
       <div className="flex-1 p-5 bg-base-200">

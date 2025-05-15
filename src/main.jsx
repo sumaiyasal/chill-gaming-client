@@ -22,7 +22,8 @@ import Dashboard from './components/Dashboard.jsx';
 import DashboardLayout from './components/DashboardLayout.jsx';
 import Overview from './components/Overview.jsx';
 import Profile from './components/Profile.jsx';
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -116,6 +117,7 @@ createRoot(document.getElementById('root')).render(
  <AuthProvider>
       <AuthProvider>
       <RouterProvider router={router}></RouterProvider>
+       <ToastContainer position="top-center" />
     </AuthProvider>
     </AuthProvider>,
 )

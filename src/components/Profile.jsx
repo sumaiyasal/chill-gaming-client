@@ -1,13 +1,15 @@
 import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from './AuthProvider';
 import { updateProfile } from 'firebase/auth';
-
+import { toast } from 'react-toastify';
+import { useLocation, useNavigate } from 'react-router-dom';
 const Profile = () => {
   const { user, signout } = useContext(AuthContext);
   const [reviewCount, setReviewCount] = useState(0);
   const [newName, setNewName] = useState(user?.displayName || '');
   const [newPhoto, setNewPhoto] = useState(user?.photoURL || '');
-
+  const navigate = useNavigate();
+     const location = useLocation();
   useEffect(() => {
     if (user?.email) {
       fetch(`https://chill-gaming-server.vercel.app/user-reviews/${user?.email}`)
@@ -23,12 +25,18 @@ const Profile = () => {
         displayName: newName,
         photoURL: newPhoto,
       });
-      alert('Profile updated successfully!');
+    toast.success('Profile updated successfully!');
+    //   alert('Profile updated successfully!'); 
       document.getElementById('edit_modal').close();
-      window.location.reload(); // optional, refresh to reflect changes
+     navigate(location?.state ? location.stats : "/dashboardlayout/profile");
+    
+     
+       // optional, refresh to reflect changes
     } catch (error) {
       console.error(error);
-      alert('Failed to update profile.');
+      toast.error('Failed to update profile.');
+       navigate(location?.state ? location.stats : "/dashboardlayout/profile");
+      
     }
   };
 
@@ -56,7 +64,7 @@ const Profile = () => {
         </button>
       </div>
 
-      {/* Edit Modal */}
+      
       <dialog id="edit_modal" className="modal">
         <div className="modal-box">
           <h3 className="font-bold text-lg mb-4">Edit Profile</h3>
