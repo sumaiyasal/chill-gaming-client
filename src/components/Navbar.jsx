@@ -42,7 +42,7 @@ const Navbar = () => {
     
     return (
         <div className="absolute">
-            <div className="navbar bg-base-100 text-black dark:bg-black dark:text-white fixed top-0 left-0 w-full z-50">
+            <div className="navbar bg-base-100 text-black dark:bg-black dark:text-white fixed top-0 left-0 w-full z-50 ">
   <div className="navbar-start ">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -73,18 +73,25 @@ const Navbar = () => {
     </ul>
   </div>
   {user && user?.email ? (
-          <div className="navbar-end flex gap-2">
-             <div class="avatar">
-    <div class="w-12">
-      <img src={user.photo?user.photo:`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU3Mk-vKpOPglmhuwPLivuDRJUU5T1QIPCAg&s`} className="w-[50px] h-[50px] picimg" />
-      <Tooltip anchorSelect=".picimg" place="left">
- {user.displayName}
-</Tooltip>
-    </div>
+         <div className="navbar-end flex gap-2 text-black">
+  
+
+<div className="dropdown dropdown-end">
+        <div tabIndex={0} role="button" className=" "><div className="avatar">
+  <div className="w-12 rounded-full">
+
+   <img src={user.photo?user.photo:`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU3Mk-vKpOPglmhuwPLivuDRJUU5T1QIPCAg&s`} className="w-[50px] h-[50px] picimg" />
   </div>
-             <button onClick={signout} className="btn bg-orange-300 rounded-xl ">
-            Log-Out
-          </button>
+</div></div>
+        <ul
+          tabIndex={0}
+          className="menu dropdown-content bg-base-100 rounded-box z-[1] mt-4 w-52 p-2 shadow">
+          <li className="pl-4">{user.displayName}</li>
+          <li><a>DashBoard</a></li>
+          <li onClick={signout}><a>Logout</a></li>
+        </ul>
+      </div>
+    
             </div>
          
         ) : (
