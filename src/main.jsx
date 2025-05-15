@@ -18,6 +18,10 @@ import Allreviews from './components/Allreviews.jsx';
 import Sreview from './Sreview';
 import Updatereview from './Updatereview.jsx';
 import Error from './Error.jsx';
+import Dashboard from './components/Dashboard.jsx';
+import DashboardLayout from './components/DashboardLayout.jsx';
+import Overview from './components/Overview.jsx';
+import Profile from './components/Profile.jsx';
 
 const router = createBrowserRouter([
   {
@@ -40,6 +44,7 @@ const router = createBrowserRouter([
         
         
       },
+      
       {
         path: "/myWatchlist",
         element: <Privateroutes>
@@ -88,6 +93,22 @@ const router = createBrowserRouter([
       
     ],
   },
+  
+     {
+ 
+  path: "/dashboardlayout",
+  element: <Privateroutes><DashboardLayout /></Privateroutes>,
+  children: [
+    { index: true, element: <Overview /> },              // Loads at /dashboard
+   
+    { path: "profile", element: <Profile></Profile> },
+    { path: "myReviews", element:<Myreviews></Myreviews> },
+    { path: "addReview", element: <AddReview/>},
+    { path: "myWatchlist", element: <Mywatchlist></Mywatchlist>}
+  ]
+}
+
+
   
 ]);
 

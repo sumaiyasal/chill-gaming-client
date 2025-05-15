@@ -24,6 +24,7 @@
     "react-toastify": "^10.0.6",
     "react-tooltip": "^5.28.0",
     "react-typewriter-effect": "^1.1.0",
+    "recharts": "^2.15.3",
     "sort-by": "^1.2.0"
   },
   "devDependencies": {

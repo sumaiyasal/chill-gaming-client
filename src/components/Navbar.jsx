@@ -80,14 +80,18 @@ const Navbar = () => {
         <div tabIndex={0} role="button" className=" "><div className="avatar">
   <div className="w-12 rounded-full">
 
-   <img src={user.photo?user.photo:`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU3Mk-vKpOPglmhuwPLivuDRJUU5T1QIPCAg&s`} className="w-[50px] h-[50px] picimg" />
+   <img src={user.photoURL?user.photoURL:`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU3Mk-vKpOPglmhuwPLivuDRJUU5T1QIPCAg&s`} className="w-[50px] h-[50px] picimg" />
   </div>
 </div></div>
         <ul
           tabIndex={0}
           className="menu dropdown-content bg-base-100 rounded-box z-[1] mt-4 w-52 p-2 shadow">
           <li className="pl-4">{user.displayName}</li>
-          <li><a>DashBoard</a></li>
+          <li><NavLink to='/dashboardlayout'style={({ isActive }) => ({
+          backgroundColor: isActive ? '#ff5733' : '#e2e6ea', 
+          color: isActive ? 'white' : '#333', 
+          marginRight:'8px',
+        })}>Dashboard</NavLink></li>
           <li onClick={signout}><a>Logout</a></li>
         </ul>
       </div>
