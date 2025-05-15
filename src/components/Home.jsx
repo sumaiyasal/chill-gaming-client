@@ -105,7 +105,7 @@ const testimonials = [
     <figure>
       <img
         src={hreview.gameimage} className="lg:w-[250px] lg:h-[250px]  w-[300px] h-[300px] pt-10 "
-        alt="Shoes" />
+        alt="Games" />
     </figure>
     <div className="card-body ">
       <h2 className="card-title">{hreview.gamename}</h2>

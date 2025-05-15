@@ -9,7 +9,7 @@ const REview = ({review}) => {
   <figure>
     <img
       src={gameimage} className="lg:w-[200px] lg:h-[200px]  w-[300px] h-[300px] pt-10 "
-      alt="Shoes" />
+      alt="Games" />
   </figure>
   <div className="card-body pl-10 ">
     <h2 className="card-title">{gamename}</h2>
