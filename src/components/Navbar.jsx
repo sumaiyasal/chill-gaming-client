@@ -5,7 +5,13 @@ import { AuthContext } from "./AuthProvider";
 import { Tooltip } from 'react-tooltip'
 const Navbar = () => {
   const{user,signout,toggleTheme}=useContext(AuthContext);
-  console.log(user);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const toggleDropdown = () => {
+    setDropdownOpen(!dropdownOpen);
+  };
+  const handleLinkClick = () => {
+    setDropdownOpen(false);
+  };
     
   
  
@@ -15,28 +21,28 @@ const Navbar = () => {
           color: isActive ? 'white' : '#333', 
           marginRight:'8px',
          
-        })}  >Home</NavLink></li>
+        })}onClick={handleLinkClick}  >Home</NavLink></li>
     <li><NavLink to='/allreviews'style={({ isActive }) => ({
           backgroundColor: isActive ? '#ff3333' : '#e2e6ea', 
           color: isActive ? 'white' : '#333', 
           marginRight:'8px',
          
-        })}>All Reviews</NavLink></li>
+        })}onClick={handleLinkClick}>All Reviews</NavLink></li>
         <li><NavLink to='/addReview'style={({ isActive }) => ({
           backgroundColor: isActive ? '#ff3333' : '#e2e6ea', 
           color: isActive ? 'white' : '#333', 
           marginRight:'8px',
-        })}>Add Reviews</NavLink></li>
+        })}onClick={handleLinkClick}>Add Reviews</NavLink></li>
     <li><NavLink to='/myReviews'style={({ isActive }) => ({
           backgroundColor: isActive ? '#ff3333' : '#e2e6ea', 
           color: isActive ? 'white' : '#333', 
           marginRight:'8px',
-        })}>My Reviews</NavLink></li>
+        })}onClick={handleLinkClick}>My Reviews</NavLink></li>
     <li><NavLink to='/myWatchlist'style={({ isActive }) => ({
           backgroundColor: isActive ? '#ff3333' : '#e2e6ea', 
           color: isActive ? 'white' : '#333', 
           marginRight:'8px',
-        })}>Game WatchList</NavLink></li>
+        })}onClick={handleLinkClick}>Game WatchList</NavLink></li>
     
     </>
     
@@ -44,27 +50,37 @@ const Navbar = () => {
         <div className="absolute">
             <div className="navbar bg-slate-100 text-black dark:bg-black dark:text-white shadow-orange-100 shadow-md fixed top-0 left-0 w-full z-50  ">
   <div className="navbar-start lg:px-8 ">
-    <div className="dropdown">
-      <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor">
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M4 6h16M4 12h8m-8 6h16" />
-        </svg>
-      </div>
-      <ul
-        tabIndex={0}
-        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-        {links}
-      </ul>
-    </div>
+    <div className="dropdown relative">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost lg:hidden"
+              onClick={toggleDropdown}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+            {dropdownOpen && (
+              <ul
+                tabIndex={0}
+                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow absolute"
+              >
+                {links}
+              </ul>
+            )}
+          </div>
     <span className="lg:text-2xl text:xl font-bold text-red-500">Chill Gamer</span>
   </div>
   <div className="navbar-center hidden lg:flex ">
