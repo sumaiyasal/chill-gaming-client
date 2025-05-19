@@ -1,38 +1,47 @@
 import { Link } from "react-router-dom";
 
+const REview = ({ review }) => {
+  const { gameimage, gamename, rating, publishingyear, _id } = review;
 
-const REview = ({review}) => {
-    const {gameimage,gamename,rating,publishingyear,_id}=review;
-    return (
-        <div>
-           <div className="card  lg:w-72 w-96 border-2 rounded-xl transition ease-in-out   hover:animate-pulse bg-base-200">
-  <figure>
-    <img
-      src={gameimage} className="lg:w-[200px] lg:h-[200px]  w-[300px] h-[300px] pt-10 "
-      alt="Games" />
-  </figure>
-  <div className="card-body pl-10 ">
-    <h2 className="card-title">{gamename}</h2>
-    <p className="text-xl">{rating} <div className="rating">
-  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-  <input
-    type="radio"
-    name="rating-2"
-    className="mask mask-star-2 bg-orange-400"
-    defaultChecked />
-  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-</div></p>
-    <p>Publish in {publishingyear}</p>
-    <div className="card-actions ">
-        <Link to={`/allreviews/${_id}`}><button className="bg-orange-400 hover:bg-orange-200 btn ">Explore Details</button></Link>
-      
-    </div>
-  </div>
-</div> 
+  return (
+    <div className="w-full max-w-xs mx-auto bg-slate-200 text-black rounded-xl border-2 transition hover:shadow-xl">
+      <figure className="flex justify-center pt-6">
+        <img
+          src={gameimage}
+          alt={gamename}
+          className="w-48 h-48  rounded"
+        />
+      </figure>
+      <div className="px-6 py-4">
+        <h2 className="text-xl font-bold mb-2">{gamename}</h2>
+
+        <div className="mb-2">
+          <p className="text-lg font-medium mb-1">Rating: {rating}</p>
+          <div className="rating">
+            {[1, 2, 3, 4, 5].map((num) => (
+              <input
+                key={num}
+                type="radio"
+                name={`rating-${_id}`}
+                className="mask mask-star-2 bg-orange-400"
+                defaultChecked={num === Math.round(rating)}
+              />
+            ))}
+          </div>
         </div>
-    );
+
+        <p className="mb-4">Published in {publishingyear}</p>
+
+        <div className="text-center">
+          <Link to={`/allreviews/${_id}`}>
+            <button className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded w-full">
+              Explore Details
+            </button>
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default REview;

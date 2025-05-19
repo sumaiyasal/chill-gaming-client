@@ -65,7 +65,7 @@ const Footer = () => {
     <footer className=" bg-base-200 text-base-content dark:bg-black dark:text-white  " >
       <div className="footer p-10 max-w-7xl mx-auto">
         <div>
-          <span className="text-2xl font-bold text-orange-500">Chill Gamer</span>
+          <span className="text-2xl font-bold text-red-500">Chill Gamer</span>
           <p className="text-sm text-gray-500 mt-2">
             Your trusted hub for game reviews, ratings, and community highlights.
           </p>

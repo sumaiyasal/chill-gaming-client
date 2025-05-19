@@ -31,8 +31,8 @@ const Myreview = ({mr}) => {
         <td>{genres}</td>
         <td>{rating}</td>
         <div className='grid grid-cols-1'>
-            <td><Link to={`/updateReview/${_id}`}><button type="btn" className="btn bg-lime-300">Update</button></Link></td>
-        <td><button type="btn" className="btn bg-red-300" onClick={()=>handledelete(_id)}>Delete</button></td>
+            <td><Link to={`/updateReview/${_id}`}><button type="btn" className="btn bg-lime-500 hover:bg-lime-600 text-white">Update</button></Link></td>
+        <td><button type="btn" className="btn bg-red-500 hover:bg-red-600 text-white" onClick={()=>handledelete(_id)}>Delete</button></td>
         </div>
         
 

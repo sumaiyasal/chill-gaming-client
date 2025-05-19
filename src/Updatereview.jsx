@@ -53,50 +53,50 @@ navigate(location?.state ? location.stats : "/myReviews");
 
     }
     return (
-       <div className="mt-10 bg-white text-black dark:bg-gray-800 dark:text-white pb-10">
+       <div className="mt-10 bg-white text-black dark:bg-[#161a1d] dark:text-white pb-10">
          <div className="container mx-auto ">
-           <h1 className="text-center text-4xl pt-10 font-extrabold">Update Review</h1> 
-           <div className="min-h-screen flex justify-center items-center">
-        <div className="card bg-base-100 w-full max-w-lg shrink-0 rounded-none p-10">
+           <h1 className="text-center text-4xl py-10 font-extrabold">Update Review</h1> 
+           <div className="min-h-screen flex justify-center items-center border-lg">
+        <div className="card bg-slate-100 text-black w-full max-w-lg shrink-0 rounded-none p-10">
          
           <form onSubmit={handleupdatesubmit} className="card-body text-black border-2 p-4 rounded-lg my-4
           ">
             <div className="form-control  ">
               <label className="label">
-                <span className="label-text">Game Cover Image</span>
+                <span className="label-text text-black">Game Cover Image</span>
               </label>
               <input
               type="text"
               name="photo"
              
               placeholder="photo-url"
-              className="input input-bordered text-black"
+              className="input input-bordered text-black bg-white shadow-xl"
               defaultValue={gameimage}
               required
             />
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Game Name</span>
+                <span className="label-text text-black">Game Name</span>
               </label>
               <input
               name="gamename"
               type="text"
               defaultValue={gamename}
               placeholder="name"
-              className="input input-bordered"
+              className="input input-bordered bg-white shadow-xl"
               required
             />
             </div>
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Game Description</span>
+                <span className="label-text text-black ">Game Description</span>
               </label>
               <textarea
               name="description"
              placeholder="Enter your review"
-             className="input input-bordered"
+             className="input input-bordered bg-white shadow-xl"
              defaultValue={review}
                required
               ></textarea>
@@ -104,14 +104,14 @@ navigate(location?.state ? location.stats : "/myReviews");
  
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Rating</span>
+                <span className="label-text text-black">Rating</span>
               </label>
               <input
               name="rating"
               type="number"
               placeholder="rating"
               defaultValue={rating}
-              className="input input-bordered"
+              className="input input-bordered bg-white shadow-xl"
                min="1"
                max="5"
               required
@@ -120,14 +120,14 @@ navigate(location?.state ? location.stats : "/myReviews");
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Publish Year</span>
+                <span className="label-text text-black">Publish Year</span>
               </label>
               <input
               name="publishyear"
               type="number"
              defaultValue={publishingyear}
               placeholder="publish year"
-              className="input input-bordered"
+              className="input input-bordered bg-white shadow-xl"
                min="1990"
                max={new Date().getFullYear()}
               required
@@ -136,13 +136,13 @@ navigate(location?.state ? location.stats : "/myReviews");
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Genres</span>
+                <span className="label-text text-black">Genres</span>
               </label>
               <select  
               name="genres"
               defaultValue={genres}
               placeholder="genres"
-              className="input input-bordered"
+              className="input input-bordered bg-white shadow-xl"
               required
                >
             <option value="">Select Genre</option>
@@ -156,7 +156,7 @@ navigate(location?.state ? location.stats : "/myReviews");
 
             <div className="form-control">
             <label className="label">
-              <span className="label-text">Email</span>
+              <span className="label-text text-black">Email</span>
             </label>
             <input
               name="email"
@@ -164,14 +164,14 @@ navigate(location?.state ? location.stats : "/myReviews");
               placeholder="email"
               defaultValue={user.email} 
             readOnly
-              className="input input-bordered"
+              className="input input-bordered bg-white shadow-xl"
               required
             />
           </div>
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text">Name</span>
+              <span className="label-text text-black">Name</span>
             </label>
             <input
               name="name"
@@ -179,13 +179,13 @@ navigate(location?.state ? location.stats : "/myReviews");
               placeholder="name"
               defaultValue={user.displayName} 
             readOnly
-              className="input input-bordered"
+              className="input input-bordered bg-white shadow-xl"
               required
             />
           </div>
 
             <div className="form-control mt-6">
-              <button className="btn btn-neutral rounded-xl mb-2">Submit</button>
+              <button className="btn bg-red-500 hover:bg-red-600 border-0 text-white rounded-xl mb-2">Submit</button>
               
             </div>
           </form>

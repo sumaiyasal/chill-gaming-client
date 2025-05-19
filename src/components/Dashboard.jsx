@@ -4,7 +4,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 const Dashboard = () => {
   return (
    
-      <div className="w-64 bg-base-100 border-r p-4">
+      <div className="w-64 bg-white text-black dark:bg-[#161a1d] dark:text-white border-r p-4">
         <h2 className="text-xl font-bold mb-6">Dashboard</h2>
         <ul className="menu">
           <li><NavLink to="/dashboardlayout">Overview</NavLink></li>
