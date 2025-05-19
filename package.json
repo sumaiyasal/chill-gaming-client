@@ -24,11 +24,13 @@
     "react-icons": "^5.5.0",
     "react-router-dom": "^6.28.0",
     "react-simple-typewriter": "^5.0.1",
+    "react-slick": "^0.30.3",
     "react-sweetalert2": "^0.6.0",
     "react-toastify": "^10.0.6",
     "react-tooltip": "^5.28.0",
     "react-typewriter-effect": "^1.1.0",
     "recharts": "^2.15.3",
+    "slick-carousel": "^1.8.1",
     "sort-by": "^1.2.0",
     "sweetalert2": "^11.21.0"
   },

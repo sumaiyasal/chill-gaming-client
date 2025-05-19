@@ -5,8 +5,29 @@ import { Typewriter } from 'react-simple-typewriter'
 import 'animate.css';
 import Marquee from 'react-fast-marquee';
 import { toast } from 'react-hot-toast';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+
 
 const Home = () => { 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true, // You can customize these
+    autoplay: true,
+    autoplaySpeed: 3000,
+  };
+
+  const images = [
+    "https://greencade.com/wp-content/uploads/2024/08/maxresdefault-58.png",
+    "https://i.pcmag.com/imagery/articles/00cWlLBJjuFKgERF0Ep5Owu-1..v1648045633.jpg",
+    "https://www.gameuidatabase.com/uploads/Clash-of-Clans12282021-110944-88753.jpg",
+    "https://www.blackflix.com/wp-content/uploads/pubgmobile_1200x76811.jpeg",
+  ];
    const handleSubscribe = (e) => {
     e.preventDefault();
     toast.success("You're subscribed, gamer! ");
@@ -57,63 +78,21 @@ const testimonials = [
     
        <div className="p-2 bg-white text-black dark:bg-[#161a1d] dark:text-white">
          <div className="container mx-auto ">
-            <section className="pt-20 relative w-full">
-  <div className="carousel w-full h-[500px] rounded-xl overflow-hidden">
-    
-    {/* Slide 1 */}
-    <div id="slide1" className="carousel-item relative w-full">
-      <img
-        src="https://greencade.com/wp-content/uploads/2024/08/maxresdefault-58.png"
-        className="w-full h-full object-cover"
-        alt="Slide 1"
-      />
-      <div className="absolute left-5 right-5 top-1/2 transform -translate-y-1/2 flex justify-between">
-        <a href="#slide4" className="btn btn-circle bg-opacity-70">❮</a>
-        <a href="#slide2" className="btn btn-circle bg-opacity-70">❯</a>
+              <section className="pt-20 relative w-full">
+      <div className="w-full h-[500px] rounded-xl overflow-hidden">
+        <Slider {...settings}>
+          {images.map((img, index) => (
+            <div key={index} className="w-full h-[500px]">
+              <img
+                src={img}
+                alt={`Slide ${index + 1}`}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
+        </Slider>
       </div>
-    </div>
-
-    {/* Slide 2 */}
-    <div id="slide2" className="carousel-item relative w-full">
-      <img
-        src="https://i.pcmag.com/imagery/articles/00cWlLBJjuFKgERF0Ep5Owu-1..v1648045633.jpg"
-        className="w-full h-full object-cover"
-        alt="Slide 2"
-      />
-      <div className="absolute left-5 right-5 top-1/2 transform -translate-y-1/2 flex justify-between">
-        <a href="#slide1" className="btn btn-circle bg-opacity-70">❮</a>
-        <a href="#slide3" className="btn btn-circle bg-opacity-70">❯</a>
-      </div>
-    </div>
-
-    {/* Slide 3 */}
-    <div id="slide3" className="carousel-item relative w-full">
-      <img
-        src="https://www.gameuidatabase.com/uploads/Clash-of-Clans12282021-110944-88753.jpg"
-        className="w-full h-full object-cover"
-        alt="Slide 3"
-      />
-      <div className="absolute left-5 right-5 top-1/2 transform -translate-y-1/2 flex justify-between">
-        <a href="#slide2" className="btn btn-circle bg-opacity-70">❮</a>
-        <a href="#slide4" className="btn btn-circle bg-opacity-70">❯</a>
-      </div>
-    </div>
-
-    {/* Slide 4 */}
-    <div id="slide4" className="carousel-item relative w-full">
-      <img
-        src="https://www.blackflix.com/wp-content/uploads/pubgmobile_1200x76811.jpeg"
-        className="w-full h-full object-cover"
-        alt="Slide 4"
-      />
-      <div className="absolute left-5 right-5 top-1/2 transform -translate-y-1/2 flex justify-between">
-        <a href="#slide3" className="btn btn-circle bg-opacity-70">❮</a>
-        <a href="#slide1" className="btn btn-circle bg-opacity-70">❯</a>
-      </div>
-    </div>
-    
-  </div>
-</section>
+    </section>
 
             {/* <button onClick={toggleTheme} >
       {isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
